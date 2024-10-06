@@ -1,7 +1,8 @@
 This sketch will display readings from an SCD41 CO2, Temperature and Humidity sensor on an esp8266 with attached 128x64 dual colour OLED display.
 
-In Arduino IDE select board as NodeMCU 1.0 (ESP-12E Module)
+For esp8266 in Arduino IDE select board as NodeMCU 1.0 (ESP-12E Module)
 
+For esp32 in Arduino IDE select board as ESP32-WROOM-DA Module
 
 You will need these libraries installed
 
