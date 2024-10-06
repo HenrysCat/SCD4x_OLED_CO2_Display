@@ -23,6 +23,8 @@ G  = GND
 
 3v = VCC
 
+![esp8266_OLED_SCD4x](https://github.com/user-attachments/assets/a8107330-041d-4b50-8562-1839177a33de)
+
 esp32
 
 D21 = SDA
@@ -33,9 +35,4 @@ G = GND
 
 3v3 = VCC
 
-esp8266
-![esp8266_OLED_SCD4x](https://github.com/user-attachments/assets/a8107330-041d-4b50-8562-1839177a33de)
-
-
-esp32
 ![esp32](https://github.com/user-attachments/assets/be00bb1c-07bf-45d5-9122-61298363b003)
