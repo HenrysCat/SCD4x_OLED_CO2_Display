@@ -13,15 +13,25 @@ https://github.com/sparkfun/SparkFun_SCD4x_Arduino_Library
 
 Wire the sensor as follows
 
-esp8266         esp32
+esp8266
 
-D5 = SDA        D21 = SDA
+D5 = SDA
 
-D6 = SCL        D22 = SCA
+D6 = SCL
 
-G  = GND          G = GND
+G  = GND
 
-3v = VCC        3v3 = VCC
+3v = VCC
+
+esp32
+
+D21 = SDA
+
+D22 = SCA
+
+G = GND
+
+3v3 = VCC
 
 esp8266
 ![esp8266_OLED_SCD4x](https://github.com/user-attachments/assets/a8107330-041d-4b50-8562-1839177a33de)
