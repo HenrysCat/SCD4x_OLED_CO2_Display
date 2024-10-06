@@ -13,7 +13,7 @@ https://github.com/sparkfun/SparkFun_SCD4x_Arduino_Library
 
 Wire the sensor as follows
 
-esp8266 Board - Sensor      esp32 board - Sensor
+esp8266 Board - Sensor          esp32 board - Sensor
 
           D5 = SDA                  D21 = SDA
 
