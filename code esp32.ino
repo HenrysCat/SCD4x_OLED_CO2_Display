@@ -11,6 +11,9 @@
 #define SDA_PIN 21
 #define SCL_PIN 22
 
+// Typically the built-in LED on ESP32 is GPIO 2
+#define LED_PIN 2
+
 SSD1306Wire display(OLED_ADDRESS, SDA_PIN, SCL_PIN); // SDA (21), SCL (22)
 
 // SCD4x instance
@@ -19,6 +22,10 @@ SCD4x mySensor;
 void setup() {
   Serial.begin(115200);
   Serial.println(F("SCD4x Example"));
+
+  // Set up the built-in LED
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW); // Set the LED off initially
 
   // Initialize hardware I2C
   Wire.begin(SDA_PIN, SCL_PIN); // SDA -> 21, SCL -> 22
@@ -48,11 +55,18 @@ void setup() {
     Serial.println(F("Sensor not detected. Please check wiring. Continuing without sensor..."));
   } else {
     Serial.println(F("SCD4x sensor initialized."));
+    mySensor.startPeriodicMeasurement();
   }
 }
 
 void loop() {
   if (mySensor.readMeasurement()) {
+
+    // Flash the built-in LED to indicate a reading
+    digitalWrite(LED_PIN, HIGH);  // Turn on LED
+    delay(10);                   // Wait for 10 ms
+    digitalWrite(LED_PIN, LOW);   // Turn off LED
+    
     // Get CO2 reading and add 20
     float co2_reading = mySensor.getCO2() + 20;
     float temperature = mySensor.getTemperature();
@@ -74,7 +88,7 @@ void loop() {
 
     // Display CO2 reading
     display.setFont(ArialMT_Plain_16);
-    display.drawString(0, 0, "CO2: " + String(co2_reading) + " ppm");
+    display.drawString(0, 0, "CO2: " + String(co2_reading, 0) + " ppm");
 
     // Display temperature
     display.drawString(0, 22, "Temp: " + String(temperature, 2) + " °C");
