@@ -6,7 +6,8 @@ For esp32 in Arduino IDE select board as ESP32-WROOM-DA Module
 
 You will need these libraries installed
 
-https://gitlab.com/alexpr0/ssd1306wire
+https://github.com/ThingPulse/esp8266-oled-ssd1306
+(or search for 'ESP8266 and ESP32 OLED driver for SSD1306 display' in ArduinoIDE)
 
 https://github.com/sparkfun/SparkFun_SCD4x_Arduino_Library
 
